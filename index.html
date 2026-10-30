@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Djerianne Business | Boutique de mode en ligne</title>
+  <meta name="description" content="Vêtements, chaussures et accessoires. Choisissez vos articles puis commandez directement sur WhatsApp.">
+  <meta name="theme-color" content="#08040D">
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Djerianne Business">
+  <meta property="og:description" content="Vêtements, chaussures et accessoires. Commandez directement sur WhatsApp.">
+  <meta property="og:image" content="icons/icon-512.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="icons/logo.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg" aria-hidden="true"><i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i></div>
+
+  <header class="topbar glass">
+    <a class="brand" href="#top" aria-label="Djerianne Business, accueil">
+      <img src="icons/logo.svg" width="40" height="40" alt="">
+      <span class="bn">Djerianne<b>Business</b></span>
+    </a>
+    <nav class="actions" aria-label="Actions">
+      <button class="icon-btn" id="btn-install" hidden aria-label="Installer l'application" title="Installer l'application">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      </button>
+      <a class="icon-btn" id="btn-wa" href="#" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp" title="WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg>
+      </a>
+      <button class="icon-btn cart-btn" id="btn-cart" aria-label="Ouvrir le panier">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="badge" id="cart-badge" hidden>0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-text">
+        <p class="eyebrow"><i></i> Nouvelle collection</p>
+        <h1>Portez<br>le <em>futur.</em></h1>
+        <p class="lead">Vêtements, chaussures et accessoires. Choisissez vos articles, puis commandez en quelques secondes sur WhatsApp.</p>
+        <div class="cta">
+          <a class="btn btn-pri" href="#collection">Voir la collection</a>
+          <a class="btn btn-glass" id="hero-wa" href="#" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+        </div>
+        <ul class="hud" aria-label="Nos engagements">
+          <li><span>Commande</span><b>WhatsApp</b></li>
+          <li><span>Prix</span><b>$ et FC</b></li>
+          <li><span>Livraison</span><b>À convenir</b></li>
+        </ul>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orbit o1"></div><div class="orbit o2"></div>
+        <div class="medal"><img src="icons/logo.svg" width="200" height="200" alt=""></div>
+        <span class="chip-f f1">Vêtements</span><span class="chip-f f2">Chaussures</span><span class="chip-f f3">Accessoires</span>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="track">
+        <span>Vêtements</span><span>Chaussures</span><span>Accessoires</span><span>Commande WhatsApp</span><span>Prix en $ et en FC</span>
+        <span>Vêtements</span><span>Chaussures</span><span>Accessoires</span><span>Commande WhatsApp</span><span>Prix en $ et en FC</span>
+      </div>
+    </div>
+
+    <section class="shop container" id="collection" aria-labelledby="shop-title">
+      <p class="eyebrow"><i></i> Catalogue</p>
+      <div class="shop-head">
+        <h2 id="shop-title">La collection</h2>
+        <p class="count" id="count"></p>
+      </div>
+
+      <div id="admin-bar" class="adminbar glass" hidden>
+        <span class="mode"><i></i> Mode gérant</span>
+        <span class="hint">Vous seul pouvez ajouter, modifier et supprimer des articles.</span>
+        <button class="btn btn-pri btn-sm" id="btn-add">+ Ajouter un article</button>
+        <button class="btn btn-glass btn-sm" id="btn-logout">Se déconnecter</button>
+      </div>
+
+      <div class="tools">
+        <div id="chips" class="chips" role="group" aria-label="Catégories"></div>
+        <label class="search glass">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input id="search" type="search" placeholder="Chercher un article" autocomplete="off" aria-label="Chercher un article">
+        </label>
+      </div>
+
+      <div id="grid" class="grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="foot container">
+    <div class="foot-card glass">
+      <div class="foot-brand">
+        <img src="icons/logo.svg" width="44" height="44" alt="">
+        <div><strong>Djerianne Business</strong><span>Vêtements, chaussures et accessoires</span></div>
+      </div>
+      <div class="foot-wa">
+        <span>Commandes sur WhatsApp</span>
+        <b id="wa-text">+243 826 914 276</b>
+        <button class="btn btn-glass btn-sm" id="btn-copy">Copier le numéro</button>
+      </div>
+      <div class="foot-meta">
+        <span>Paiement et livraison à convenir avec la boutique sur WhatsApp.</span>
+        <span>© <span id="year"></span> Djerianne Business
+          <button class="lock" id="btn-admin" aria-label="Espace gérant" title="Espace gérant" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </button>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cartbar" class="cartbar glass" hidden>
+    <div class="cb-info"><b id="cb-count"></b><span id="cb-total"></span></div>
+    <button class="btn btn-pri btn-sm" id="cb-open">Voir le panier</button>
+  </div>
+
+  <div id="overlay" class="overlay" hidden></div>
+  <noscript><p style="padding:24px;text-align:center">Activez JavaScript pour voir la boutique.</p></noscript>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
